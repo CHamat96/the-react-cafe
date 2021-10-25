@@ -3,6 +3,7 @@ import HomePage from './routes/HomePage.js'
 import Header from './components/Header.js'
 import Menu from './routes/Menu.js'
 import AboutPage from './routes/About.js'
+import Footer from './components/Footer.js'
 
 // package import
 import {BrowserRouter as Router, Route} from 'react-router-dom'
@@ -13,7 +14,7 @@ function App() {
   return (
     <Router>
           <Header />
-          <main className="wrapper">
+          <main>
             <Route exact path="/">
               <HomePage/>
             </Route>
@@ -24,6 +25,9 @@ function App() {
               <Menu />
             </Route>
           </main>
+          <footer>
+            <Footer />
+          </footer>
     </Router>
   );
 }

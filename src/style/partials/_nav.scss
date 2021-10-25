@@ -1,34 +1,37 @@
-nav {
-    .navFlex {
-        z-index: 10;
-        position: relative;
-        display: flex;
-        margin-top: 1rem;
-        align-items: flex-start;
-        justify-content: center;
-    }
+.navBar {
+    z-index: 10;
     a {
         text-decoration: none;
         color: $white;
     }
-    .navMain {
-        background: $coffeeBrown;
+    &--navMain {
         display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    &--navMenu {
+        margin-top: 0.75rem;
+        display: flex;
+        background: $coffeeBrown;
         > li {
             flex: 1 1 auto;
             padding: 0.5rem 1rem;
         }
-        li:hover {
+    }
+    li {
+        &:hover,
+        &:focus-within {
             background: $greyBrown;
         }
-        .navSubHeading {
-            position: relative;
-            &:hover .navSub {
-                visibility: visible;
-            }
+    }
+    &--navSubHeading {
+        position: relative;
+        &:hover > ul,
+        &:focus-within > ul {
+            visibility: visible;
         }
     }
-    .navSub {
+    &--navSub {
         background: $coffeeBrown;
         width: 100%;
         display: block;

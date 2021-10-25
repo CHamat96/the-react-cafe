@@ -25,9 +25,10 @@ h2 {
 }
 
 .overlayText {
+    text-align: center;
     h3 {
         color: $gold;
-        font-size: 1.5rem;
+        font-size: 5vw;
         text-shadow: 0.05rem 0.05rem $white;
     }
 }

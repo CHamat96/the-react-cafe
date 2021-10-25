@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Bebas+Neue&display=swap");
 html {
   line-height: 1.15;
@@ -294,8 +295,13 @@ ul {
 h1,
 h2,
 h3,
-h4 {
+h4,
+p,
+a,
+img,
+li {
   margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -320,42 +326,46 @@ h2 {
   font-size: 4.25rem;
 }
 
+.overlayText {
+  text-align: center;
+}
 .overlayText h3 {
   color: #b0976d;
-  font-size: 1.5rem;
+  font-size: 5vw;
   text-shadow: 0.05rem 0.05rem #ffffff;
 }
 
-nav .navFlex {
+.navBar {
   z-index: 10;
-  position: relative;
-  display: flex;
-  margin-top: 1rem;
-  align-items: flex-start;
-  justify-content: center;
 }
-nav a {
+.navBar a {
   text-decoration: none;
   color: #ffffff;
 }
-nav .navMain {
-  background: #6f4e37;
+.navBar--navMain {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
-nav .navMain > li {
+.navBar--navMenu {
+  margin-top: 0.75rem;
+  display: flex;
+  background: #6f4e37;
+}
+.navBar--navMenu > li {
   flex: 1 1 auto;
   padding: 0.5rem 1rem;
 }
-nav .navMain li:hover {
+.navBar li:hover, .navBar li:focus-within {
   background: #554c4a;
 }
-nav .navMain .navSubHeading {
+.navBar--navSubHeading {
   position: relative;
 }
-nav .navMain .navSubHeading:hover .navSub {
+.navBar--navSubHeading:hover > ul, .navBar--navSubHeading:focus-within > ul {
   visibility: visible;
 }
-nav .navSub {
+.navBar--navSub {
   background: #6f4e37;
   width: 100%;
   display: block;
@@ -365,11 +375,15 @@ nav .navSub {
   visibility: hidden;
   overflow: hidden;
 }
-nav .navSub li {
+.navBar--navSub li {
   text-align: center;
   padding: 1rem 0.2rem;
 }
 
+.homeContent--about {
+  background: #465a70;
+  color: #ffffff;
+}
 .homeContent a {
   display: inline-block;
   margin: 0.5rem;
@@ -384,51 +398,124 @@ nav .navSub li {
   line-height: 1.25rem;
 }
 .homeContent--menu {
-  display: flex;
-  flex-flow: column wrap;
   text-align: center;
+}
+.homeContent .flexParent {
+  display: flex;
+  flex-flow: column;
   align-items: center;
 }
 .homeContent--menuGallery {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
 }
 .homeContent--menuGallery .menuItem {
-  flex: 2 1 auto;
+  flex: 2 2 50%;
+}
+.homeContent--menuGallery .menuItem img {
+  max-height: 25rem;
+  width: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0;
 }
 .homeContent--menuGallery .menuContainer {
   position: relative;
   padding: 1rem;
 }
-.homeContent--menuGallery img {
-  max-height: 20rem;
-  width: 25rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .homeContent--menuGallery .overlayText {
+  padding: 2rem;
   position: absolute;
   z-index: 2;
-  top: 15%;
-  left: 0;
+  top: calc(40% - 3rem);
+  left: auto;
+  right: auto;
   visibility: hidden;
   overflow: hidden;
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 100%;
 }
 .homeContent--menuGallery .menuItem:hover img,
-.homeContent--menuGallery .menuItem:focus img {
+.homeContent--menuGallery .menuItem:focus-within img {
   filter: grayscale(100) blur(3px);
 }
 .homeContent--menuGallery .menuItem:hover .overlayText,
-.homeContent--menuGallery .menuItem:focus .overlayText {
+.homeContent--menuGallery .menuItem:focus-within .overlayText {
   visibility: visible;
   overflow: visible;
 }
-.homeContent .menuLinks {
-  align-self: flex-start;
+.homeContent--testimonials {
+  background: #6f4e37;
+  color: #ffffff;
+}
+.homeContent--testimonials h2 {
+  text-shadow: 0.25rem 0.25rem #554c4a;
+}
+.homeContent--testimonials .commentContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.homeContent--testimonials .testimony {
+  width: 75%;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.homeContent--testimonials .testimony:nth-of-type(2) {
+  align-self: flex-end;
+}
+.homeContent--testimonials .comment {
+  position: relative;
+}
+.homeContent--testimonials .comment p {
+  font-style: italic;
+  letter-spacing: 0.2rem;
+  line-height: 1.25rem;
+}
+.homeContent--testimonials .comment::before, .homeContent--testimonials .comment::after {
+  font-family: serif;
+  font-size: 2rem;
+  position: absolute;
+}
+.homeContent--testimonials .comment::before {
+  content: "“";
+  top: 0;
+  left: 0;
+}
+.homeContent--testimonials .comment::after {
+  content: "”";
+  right: 0;
+  bottom: 0;
+}
+.homeContent--testimonials .signature {
+  align-self: flex-end;
+  font-weight: 600;
+}
+.homeContent--hours {
+  text-align: center;
+}
+.homeContent--hours .intro {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.5rem;
+}
+.homeContent--hours ul p {
+  padding: 0.5rem 0;
+}
+.homeContent--hours .day {
+  font-family: "Bebas Neue", cursive;
+}
+.homeContent--hours .disclaimer {
+  font-style: italic;
+  font-weight: 600;
+}
+.homeContent--hours .disclaimer span {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: normal;
+}
+.homeContent--dividerBlock {
+  height: 25vh;
+  background: url(../assets/barista.jpg) center/cover;
 }
 
 .title {
@@ -438,4 +525,13 @@ nav .navSub li {
 
 section {
   padding: 3rem 0;
+}
+
+footer {
+  background: #554c4a;
+  text-align: center;
+  padding: 1.5rem;
+  color: #ffffff;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.75rem;
 }/*# sourceMappingURL=App.css.map */

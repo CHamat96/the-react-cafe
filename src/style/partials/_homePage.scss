@@ -1,4 +1,8 @@
 .homeContent {
+    &--about {
+        background: $darkPaleBlue;
+        color: $white;
+    }
     a {
         display: inline-block;
         margin: 0.5rem;
@@ -14,40 +18,41 @@
         line-height: 1.25rem;
     }
     &--menu {
-        display: flex;
-        flex-flow: column wrap;
         text-align: center;
+    }
+    .flexParent {
+        display: flex;
+        flex-flow: column;
         align-items: center;
     }
     &--menuGallery {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
         .menuItem {
-            flex: 2 1 auto;
+            flex: 2 2 50%;
+            img {
+                max-height: 25rem;
+                width: 30rem;
+                object-fit: cover;
+                margin: 0;
+            }
         }
         .menuContainer {
             position: relative;
             padding: 1rem;
         }
-        img {
-            max-height: 20rem;
-            width: 25rem;
-            object-fit: cover;
-        }
         .overlayText {
+            padding: 2rem;
             position: absolute;
             z-index: 2;
-            top: 15%;
-            left: 0;
+            top: calc(40% - 3rem);
+            left: auto;
+            right: auto;
             visibility: hidden;
             overflow: hidden;
-            padding: 2rem;
-            margin: 0 auto;
-            max-width: 100%;
         }
         .menuItem:hover,
-        .menuItem:focus {
+        .menuItem:focus-within {
             img {
                 filter: grayscale(100) blur(3px);
             }
@@ -57,7 +62,82 @@
             }
         }
     }
-    .menuLinks {
-        align-self: flex-start;
+    &--testimonials {
+        background: $coffeeBrown;
+        color: $white;
+        h2 {
+            text-shadow: 0.25rem 0.25rem $greyBrown;
+        }
+        .commentContainer {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        .testimony {
+            width: 75%;
+            margin: 0.5rem 0;
+            display: flex;
+            flex-direction: column;
+            &:nth-of-type(2) {
+                align-self: flex-end;
+            }
+        }
+        .comment {
+            position: relative;
+            p {
+                font-style: italic;
+                letter-spacing: 0.2rem;
+                line-height: 1.25rem;
+            }
+            &::before,
+            &::after {
+                font-family: serif;
+                font-size: 2rem;
+                position: absolute;
+            }
+            &::before {
+                content: "“";
+                top: 0;
+                left: 0;
+            }
+            &::after {
+                content: "”";
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .signature {
+            align-self: flex-end;
+            font-weight: 600;
+        }
+    }
+    &--hours {
+        text-align: center;
+        .intro {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 1.5rem;
+        }
+        ul {
+            p {
+                padding: 0.5rem 0;
+            }
+        }
+        .day {
+            font-family: $accentFont;
+        }
+        .disclaimer {
+            font-style: italic;
+            font-weight: 600;
+            span {
+                text-transform: uppercase;
+                font-weight: 900;
+                font-style: normal;
+            }
+        }
+    }
+    &--dividerBlock {
+        height: 25vh;
+        background: url(../assets/barista.jpg) center / cover;
     }
 }
