@@ -2,8 +2,13 @@
 @import "./partials/vars";
 @import "./partials/typography";
 @import "./partials/nav";
+@import "./partials/homePage.scss";
 
 .title {
-    margin: 12rem 0;
+    margin: 12rem 2rem;
     text-align: center;
+}
+
+section {
+    padding: 3rem 0;
 }

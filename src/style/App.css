@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Bebas+Neue&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -291,49 +291,151 @@ ul {
   margin: 0 auto;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
 nav a {
   font-family: "Bebas Neue", cursive;
   font-size: 1.15rem;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bebas Neue", cursive;
+}
+
 .title h1,
 .title h2 {
   font-size: 5rem;
+  text-shadow: 0.1rem 0.1rem #b0976d;
 }
 
-nav {
-  position: absolute;
-  left: 5rem;
-  z-index: 10;
-  padding: 2rem 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
+h2 {
+  font-size: 4.25rem;
 }
-nav .logoIcon {
-  flex: 1 1 auto;
+
+.overlayText h3 {
+  color: #b0976d;
+  font-size: 1.5rem;
+  text-shadow: 0.05rem 0.05rem #ffffff;
+}
+
+nav .navFlex {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  margin-top: 1rem;
+  align-items: flex-start;
+  justify-content: center;
 }
 nav a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 }
 nav .navMain {
+  background: #6f4e37;
   display: flex;
+}
+nav .navMain > li {
+  flex: 1 1 auto;
+  padding: 0.5rem 1rem;
+}
+nav .navMain li:hover {
+  background: #554c4a;
 }
 nav .navMain .navSubHeading {
   position: relative;
-  padding: 0 2rem;
 }
 nav .navMain .navSubHeading:hover .navSub {
   visibility: visible;
 }
 nav .navSub {
+  background: #6f4e37;
+  width: 100%;
+  display: block;
   position: absolute;
+  left: 0;
+  top: 100%;
   visibility: hidden;
   overflow: hidden;
 }
+nav .navSub li {
+  text-align: center;
+  padding: 1rem 0.2rem;
+}
+
+.homeContent a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: #b0976d;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.homeContent p {
+  padding: 1rem 0;
+  line-height: 1.25rem;
+}
+.homeContent--menu {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  align-items: center;
+}
+.homeContent--menuGallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.homeContent--menuGallery .menuItem {
+  flex: 2 1 auto;
+}
+.homeContent--menuGallery .menuContainer {
+  position: relative;
+  padding: 1rem;
+}
+.homeContent--menuGallery img {
+  max-height: 20rem;
+  width: 25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homeContent--menuGallery .overlayText {
+  position: absolute;
+  z-index: 2;
+  top: 15%;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.homeContent--menuGallery .menuItem:hover img,
+.homeContent--menuGallery .menuItem:focus img {
+  filter: grayscale(100) blur(3px);
+}
+.homeContent--menuGallery .menuItem:hover .overlayText,
+.homeContent--menuGallery .menuItem:focus .overlayText {
+  visibility: visible;
+  overflow: visible;
+}
+.homeContent .menuLinks {
+  align-self: flex-start;
+}
 
 .title {
-  margin: 12rem 0;
+  margin: 12rem 2rem;
   text-align: center;
+}
+
+section {
+  padding: 3rem 0;
 }/*# sourceMappingURL=App.css.map */

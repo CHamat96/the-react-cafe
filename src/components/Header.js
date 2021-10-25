@@ -16,7 +16,6 @@ const Header = () => {
 
   return (
     <header>
-      <NavBar />
       <HeroSlider
       slidingAnimation="left_to_right"
       orientation="horizontal"
@@ -31,6 +30,7 @@ const Header = () => {
         height:'70vh'
       }}
       >
+        <NavBar />
         <Link to="/">
           <Slide
           background={{
@@ -59,7 +59,7 @@ const Header = () => {
             </OverlayContainer>
           </Slide>
         </Link>
-        <Link to="/Order">
+        <Link to="/Menu/OrderOnline">
           <Slide
           background={{
             backgroundImage:coffeeHero
@@ -71,7 +71,7 @@ const Header = () => {
             </OverlayContainer>
           </Slide>
         </Link>
-        <Link to="/Order/Catering">
+        <Link to="/Menu/Catering">
           <Slide
           background={{
             backgroundImage:pastry

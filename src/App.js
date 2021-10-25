@@ -1,7 +1,7 @@
 // Components import 
 import HomePage from './routes/HomePage.js'
 import Header from './components/Header.js'
-import OnlineOrder from './routes/Order.js'
+import Menu from './routes/Menu.js'
 import AboutPage from './routes/About.js'
 
 // package import
@@ -20,8 +20,8 @@ function App() {
             <Route exact path="/About">
               <AboutPage />
             </Route>
-            <Route exact path="/Order">
-              <OnlineOrder />
+            <Route exact path="/Menu">
+              <Menu />
             </Route>
           </main>
     </Router>

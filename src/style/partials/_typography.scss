@@ -5,9 +5,29 @@ nav {
     }
 }
 
+h1,
+h2,
+h3,
+h4 {
+    font-family: $accentFont;
+}
+
 .title {
     h1,
     h2 {
         font-size: 5rem;
+        text-shadow: 0.1rem 0.1rem $gold;
+    }
+}
+
+h2 {
+    font-size: 4.25rem;
+}
+
+.overlayText {
+    h3 {
+        color: $gold;
+        font-size: 1.5rem;
+        text-shadow: 0.05rem 0.05rem $white;
     }
 }
